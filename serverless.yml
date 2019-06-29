@@ -1,0 +1,11 @@
+service: hello-serverless-test
+provider:
+  name: aws
+  region: eu-central-1
+  runtime: nodejs8.10
+functions:
+  hellox:
+    handler: handler.hello
+    events:
+      # Invoke Lambda function every minute
+      - schedule: rate(1 minute)
